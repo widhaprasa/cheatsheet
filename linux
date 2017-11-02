@@ -1,0 +1,45 @@
+# Add user and group for service linux
+useradd -r -s /bin/false {username}
+
+# Remove linux user, homedir and maildir
+userdel -r {username}
+
+# Remove linux group
+groupdel {username}
+
+# Change ownership
+chown {user}:{group} {path to file/directory}
+chown -R {user}:{group} {path to directory}
+
+# List all linux user
+cat /etc/passwd
+
+# List all linux group
+cat /etc/group
+
+# List with permission
+ls -l
+
+# Check active port
+netstat -tulpn
+
+# Run in background
+./{command} > /{log file path} 2>&1 &
+./{command} > /dev/null 2>&1 &
+
+# Export JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# Search java
+which java
+
+# Find symlink source
+ls -l {symlink path}
+ls -l /usr/bin/java (example: java)
+
+# Stream edit on file
+sed 
+
+# Sudo rule
+	- Copy file/directory with sudo (sudo cp) automatically make the file/directory ownership to root:root
+	- Move file/directory with sudo (sudo mv) don't change the file/directory ownership
