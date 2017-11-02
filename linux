@@ -44,6 +44,6 @@ sed
 	- Copy file/directory with sudo (sudo cp) automatically make the file/directory ownership to root:root
 	- Move file/directory with sudo (sudo mv) don't change the file/directory ownership
 	
-# Clean file
-echo "" > {path to file}
+# Clear file
+echo "" > {path to text file}
 
