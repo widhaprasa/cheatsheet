@@ -8,8 +8,8 @@ userdel -r {username}
 groupdel {username}
 
 # Change ownership
-chown {user}:{group} {path to file/directory}
-chown -R {user}:{group} {path to directory}
+chown {user}:{group} {file/directory path}
+chown -R {user}:{group} {directory path}
 
 # List all linux user
 cat /etc/passwd
@@ -17,21 +17,35 @@ cat /etc/passwd
 # List all linux group
 cat /etc/group
 
+# List with detail format
+ls -al
+
 # List with permission
 ls -l
 
-# Check active port
-netstat -tulpn
+# Display the present working directory
+pwd
 
-# Run in background
-./{command} > /{log file path} 2>&1 &
-./{command} > /dev/null 2>&1 &
+# Create an empty file or update the access and modification times of file.
+touch {file path}
 
-# Export JAVA_HOME
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+# View the contents of file
+cat {file path}
 
-# Search java
-which java
+# Browse through a text file
+less {file path}
+
+# Display the first 10 lines of file
+head {file path}
+
+# Display the last 10 lines of file
+tail {file path}
+
+# Display the last 10 lines of file and "follow" the file as it grows.
+tail -f {file path}
+
+# Create sysmlink
+ln -s {file/directory path} {symlink path}
 
 # Find symlink source
 ls -l {symlink path}
@@ -42,8 +56,51 @@ sed
 
 # Sudo rule
 	- Copy file/directory with sudo (sudo cp) automatically make the file/directory ownership to root:root
-	- Move file/directory with sudo (sudo mv) don't change the file/directory ownership
+	- Move file/directory with sudo (sudo mv) doesn't change the file/directory ownership
 	
 # Clear file
-echo "" > {path to text file}
+cat /dev/null > {text file path}
+echo "" > {text file path}
+
+# Check active port
+netstat -tulpn
+
+# Display stopped or background jobs
+bg
+
+# Brings the most recent background job to foreground
+fg
+
+# Brings job n to the foreground
+fg {n}
+
+# Display running process with {name}
+ps aux | grep {name}
+
+# Kill process with pid
+kill {pid}
+
+# Run in background
+./{command} &
+
+# Run in background (with log file)
+./{command} > /{log file path} 2>&1 &
+./{command} > /dev/null 2>&1 &
+
+# Untar
+tar zxvf {tar file path}
+
+# Export JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# Search java
+which java
+
+# List running service (SysVinit)
+service --status-all
+
+# List running service (systemd)
+systemctl list-unit-files --state=running
+systemctl list-unit-files --state=active
+systemctl list-unit-files --state=enabled
 
