@@ -104,3 +104,5 @@ systemctl list-unit-files --state=running
 systemctl list-unit-files --state=active
 systemctl list-unit-files --state=enabled
 
+# Open all port
+iptables -F
