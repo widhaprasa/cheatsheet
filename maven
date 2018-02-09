@@ -1,4 +1,4 @@
-# Deploy file to Nexus 3
+# Deploy jar file to Nexus 3
 deploy:deploy-file
 	-DgroupId={group-id}
 	-DartifactId={artifact-id}
