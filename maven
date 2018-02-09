@@ -1,0 +1,21 @@
+# Deploy file to Nexus 3
+deploy:deploy-file
+	-DgroupId={group-id}
+	-DartifactId={artifact-id}
+	-Dversion={version}
+	-Dpackaging=jar
+	-Dfile={path to jar file}
+	-DgeneratePom=true
+	-DrepositoryId={server-id}
+	-Durl={release-repository-url}
+
+## Example:
+deploy:deploy-file
+	-DgroupId=org.apache.avro
+	-DartifactId=avro
+	-Dversion=1.7.5-KAA
+	-Dpackaging=jar
+	-Dfile=lib/avro-1.7.5-KAA.jar
+	-DgeneratePom=true
+	-DrepositoryId=nexus-releases
+	-Durl=http://192.168.130.111:38081/repository/maven-releases/
