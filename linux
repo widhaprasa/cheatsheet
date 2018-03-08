@@ -65,6 +65,9 @@ echo "" > {text file path}
 # Check active port
 netstat -tulpn
 
+# Check if {port} is active
+netstat -ntlp | grep {port}
+
 # Display stopped or background jobs
 bg
 
