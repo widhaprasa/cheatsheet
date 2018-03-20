@@ -61,6 +61,7 @@ sed
 # Clear file
 cat /dev/null > {text file path}
 echo "" > {text file path}
+sudo sh -c 'echo "" > {text file path}' (with sudo)
 
 # Check active port
 netstat -tulpn
