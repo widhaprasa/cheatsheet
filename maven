@@ -8,14 +8,16 @@ deploy:deploy-file
 	-DgeneratePom=true
 	-DrepositoryId={server-id}
 	-Durl={release-repository-url}
+	-P{profile}
 
 ## Example:
 deploy:deploy-file
-	-DgroupId=org.apache.avro
-	-DartifactId=avro
-	-Dversion=1.7.5-KAA
+	-DgroupId=org.abc.def
+	-DartifactId=ghi
+	-Dversion=1.0
 	-Dpackaging=jar
-	-Dfile=lib/avro-1.7.5-KAA.jar
+	-Dfile=libs/ghi.jar
 	-DgeneratePom=true
 	-DrepositoryId=nexus-releases
-	-Durl=http://192.168.130.111:38081/repository/maven-releases/
+	-Durl=http://192.168.1.1:8081/repository/maven-releases/
+	-Pnexus
